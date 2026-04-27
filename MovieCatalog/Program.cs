@@ -14,8 +14,9 @@ class Program
             Console.WriteLine("\n1. Add Movie");
             Console.WriteLine("2. View Movies");
             Console.WriteLine("3. Add Rating");
-            Console.WriteLine("4. Delete Movie");
-            Console.WriteLine("5. Exit");
+            Console.WriteLine("4. User Management");
+            Console.WriteLine("5. Delete Movie");
+            Console.WriteLine("6. Exit");
 
             var choice = Console.ReadLine();
 
