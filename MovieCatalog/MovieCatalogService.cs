@@ -47,7 +47,7 @@ class MovieService
 
         cmd.ExecuteNonQuery();
     }
-    static void ShowUserMenu(MovieService service)
+    public void ShowUserMenu(MovieService service)
     {
         while (true)
         {
