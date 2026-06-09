@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="MovieCatalog.Tests/MovieCatalog.Tests.csproj" Id="0a5d3c6d-4219-4088-b4bb-0dc94f1a416b" />
   <Project Path="MovieCatalog/MovieCatalog.csproj" />
 </Solution>
