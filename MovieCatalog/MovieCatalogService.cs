@@ -1,11 +1,11 @@
 ﻿using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore.Storage;
 
-class MovieService
+public class MovieService
 {
     public void AddMovie(string title, int year, int genreId)
     {
-        using var conn = new SqliteConnection("Data Source=moviecatalog.db");
+        using var conn = DatabaseHelper.GetConnection();
         conn.Open();
 
         var cmd = conn.CreateCommand();
@@ -20,7 +20,7 @@ class MovieService
 
     public void GetAllMovies()
     {
-        using var conn = new SqliteConnection("Data Source=moviecatalog.db");
+        using var conn = DatabaseHelper.GetConnection();
         conn.Open();
 
         var cmd = conn.CreateCommand();
@@ -38,7 +38,7 @@ class MovieService
 
     public void DeleteMovie(int id)
     {
-        using var conn = new SqliteConnection("Data Source=moviecatalog.db");
+        using var conn = DatabaseHelper.GetConnection();
         conn.Open();
 
         var cmd = conn.CreateCommand();

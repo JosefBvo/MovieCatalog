@@ -2,7 +2,7 @@ using Microsoft.Data.Sqlite;
 
 public static class DatabaseHelper
 {
-    private const string ConnectionString = "Data Source=moviecatalog.db";
+    public static string ConnectionString = "Data Source=moviecatalog.db";
     public static SqliteConnection GetConnection()
     {
         return new SqliteConnection(ConnectionString);
