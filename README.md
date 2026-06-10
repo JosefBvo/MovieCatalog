@@ -78,13 +78,21 @@ Contains automated unit tests executed during the CI pipeline.
 * .NET 10 SDK or later
 * IDE (I personally used Visual Studio Community 2026)
 
-### Build
+### Docker 
+
+```
+docker build -t moviecatalog .
+
+docker run --rm -it moviecatalog
+```
+
+### Build Locally
 
 ```
 dotnet build
 ```
 
-### Run
+#### Run
 
 ```
 dotnet run --project MovieCatalog
@@ -107,6 +115,13 @@ On every push and pull request:
 3. Execute unit tests
 4. Verify the application compiles successfully
 
+### Continuous Delivery
+
+Once a PR is merged into default branch:
+
+1. The app is containerized into a docker image
+2. The image is pushed to GitHub Container Registry (GHCR) for easy deployment
+
 ### Security Controls
 
 #### CodeQL Analysis
@@ -121,19 +136,12 @@ Dependabot continuously monitors project dependencies and automatically creates 
 
 Unit tests help validate core application functionality and reduce the risk of regressions during future development.
 
----
+#### Container Security
 
-## Security Considerations
-
-The repository includes a few layers of automated security validation:
-
-* Static application security testing through CodeQL
-* Dependency monitoring and update management through Dependabot
-* Automated unit testing during CI workflows
+Builds to ensure that the final production image contains only the necessary runtime files, reducing attack surface.
 
 ---
 
 ## Purpose of This Repository
 
-This repository as of 6/8/2026 serves as a demonstration of a secure CI/CD pipeline using GitHub Actions and modern DevSecOps practices. The Movie Catalog application itself is intentionally simple.
-
+This repository (as of 6/8/2026) serves as a functional showcase of modern DevOps engineering, demonstrating how to bridge the gap between local C# development and automated cloud delivery using Docker and GitHub Actions.
